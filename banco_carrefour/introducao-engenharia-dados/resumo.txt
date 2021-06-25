@@ -1,0 +1,65 @@
+Bi é o processo de transformar dados em informações e informações em conhecimento.
+* converter o volume de dados em informações por meio de relatórios analíticos
+
+O DW DataWare House é uma arquitetura de armazenamento projetada para conter
+dados extraídos de sistemas de transações, armazenamentos de dados operacionais
+e fontes externas
+
+* Combina esses dados em um formulário de resumo agregado, adequado para
+análise de dados em toda a empresa e relatórios para necessidades de negócios prefefinidas
+
+
+OLTP x OLAP
+
+Online Transactional Processing
+* Sistemas transacionais
+* Operações do dia a dia
+* Transações em tempo real da organização
+* Milisegundos
+* Atualizações curtas e rápidas iniciadas pelo usuário
+* Normalizado
+
+Online Analytical Processing
+* Modelos de dados/Estruturas de dados
+* Suporte a decisão
+* Bases de dados de sistemas transacionais (OLTP)
+* Minutos/Horas
+* Geralmente grandes volumes, devido a agregação dos conjuntos de dados
+* Desnormalizado
+
+ETL 
+
+Extract - Transform - Load
+
+* É um processo automatizado que coleta dados brutos, extrai as informações 
+necessárias para análise, transforma em um formato que atende as necessidades
+de negócios e carrega em um data warehouse
+
+Movimentação de volumes de dados:
+
+* Cargas completas - truncate e load (sempre vai carregar 
+toda informação do sistema de origem para o sistema de destino)
+ - truncate é o processo de limpeza de uma tabela
+
+* Cargas incrementais - data/id
+
+Desafios ETL
+
+* Escalabilidade - um dos recursos mais importantes em ETL's
+* Acurácia - garantir que os dados tratados sejam precisos e completos
+* Manusear fontes de dados diversos - lidar com diversos tipos de BD's
+
+Data Mart
+
+* Subconjunto de um data warehouse
+* Orientado para uma linha de negócios específica
+* Contem repositórios de dados resumidos, coletados para análise em uma
+seção ou unidade específica dentro de uma organização
+
+Inmon vs Kimball
+
+Inmon
+* Top-down design
+
+Kimball
+* Bottom-up design

@@ -1,0 +1,24 @@
+Aprendizagem supervisionada e não supervisionada
+
+Supervisionada
+Variável resposta pré definida
+* Dias de atraso na fatura/Adimplente, Inadimplente
+- Classificação
+- Regressão
+* Regressão Linear Simples/Multipla
+* Regressão Logística Lasso/Ridge
+* Floresta Aleatória
+* Extra Tree
+* Árvore
+
+Não supervisionada
+É composto somente pelas caracteristicas nos conjuntos de dados analisados
+*construção de um modelo de cluster ( a ideia é agrupar indivíduos que tem características similares dentro do grupo e características diferentes fora do grupo)
+- Clustering
+*Analise de Agrupamento
+- Associação
+* Sistema de Recomendação
+por ex: mercado. associar produtos. lembrar poder do hábito.
+- Generalização (Dimensão reduzida)
+* Redução de Dimensionalidade
+

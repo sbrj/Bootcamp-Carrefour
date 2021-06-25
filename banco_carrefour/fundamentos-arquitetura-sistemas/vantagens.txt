@@ -1,0 +1,51 @@
+O que são serviços web?
+* São soluções para aplicações se comunicarem independentemente de linguagem, softwares e hardwares utilizados
+* Podemos dizer que Serviços Web são API's que se comunicam por meio de redes sobre o protocolo HTTP
+
+Todos os serviços WEB são API's, mas tem todas as API's são serviços WEB.
+
+Exeplo de Web Service é uma API para acionar um banco de dados de uma empresa.
+
+Por ex: extrair dados do Facebook ou outro site qualquer.
+Com o DB do site fornece os dados? Por meio de XML, JSON, CSV.
+
+Vantagens:
+- Linguagem comum
+- Integração
+- Reutilização de implementação
+- Segurança
+- Custos
+
+Tecnologias mais utilizadas
+- SOAP
+- REST
+- XML
+- JSON
+
+O que é SOAP?
+* Simple Object Access Protocol
+- Protocolo baseado em XML para acessar Web Services principalmente por HTTP
+
+Quais as vantagens de utilizar o SOAP
+* Permite integração entre aplicações, independente da linguagem, pois usa o XML como linguagem de marcação comum
+- É independente de plataforma e software; É um meio de transporte genérico.
+
+O que é XML?
+* Extensible Markup Language
+- Linguagem de marcação criada na década de 90 pela W3C
+- Facilita a separação de conteúdo
+- Não tem limitação de criação de tags
+- Linguagem comum para integrações entre aplicações
+
+Entender a estrutura de uma msg SOAP
+* 'SOAP Message' possui uma estrutura única que deve ser sempre seguida
+- SOAP Envelope
+* Primeiro elemento do documento e é usado para encapsular a mensagem SOAP (tudo vai dentro do Envelope)
+	- SOAP HEADER
+	* É o elemento onde possui informações de atributos e metadados da requisição
+	* Pode levar o token; credenciais de autenticação etc.
+		- SOAP Body
+		* É o elemento que contem os detalhes da mensagem
+
+
+
