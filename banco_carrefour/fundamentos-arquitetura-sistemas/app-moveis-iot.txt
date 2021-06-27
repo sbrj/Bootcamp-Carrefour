@@ -1,0 +1,146 @@
+Introdução:
+
+Envolvido por 'coisas', 'internet' e 'inteligencia'
+
+Utiliza-se de sensores para obter dados e analisar os dados de forma inteligente para resolver problemas, otimizar processos ou mesmo para ter vantagem competitiva.
+
+* Computação Ubíquoa
+
+- É a terceira onda da computação que está apenas começando. Primeiro foram os mainframes compartilhados por várias pessoas. Estamos na computação pessoal, com pessoas e máquinas estranhando uma as outras. A seguir vem a computação ubíquoa, a era da tecnologia 'calma', quando a tecnologia recua para o pano de fundo de nossas vidas.
+
+- As tecnologias mais importantes são aquelas que desaparecem. Elas se integram à vida do dia a dia, ao nosso cotidiano até serem indistinguíveis dele.
+
+= Desafios:
+* Principais desafios são privacidade e segurança.
+* Outro desafio é a quantidade de dispositivos conectados
+* Ser capaz de processar e armazenar uma enorme quantidade de informações 
+* Gerar valor a partir dos dados coletados
+
+= Considerações
+* Baixo consumo de energia
+* Rede de dados limitado
+* Resiliencia
+* Seguranca
+* Customização
+
+** Tipos:
+
+Arduino
+- Plataforma de prototipagem
+- Com entradas/Saídas
+- Desenvolvedor escreve em C/C++
+- Interface serial ou USB
+- Shields (componentes arduino, como bluetooth, wi-fi.
+
+Embarcados
+- MCUs - Microcontroladores
+- Microcontrolador de chip único
+- Sistema operacional real time
+- Embarcado
+- Uso industrial, médico, militar, transporte
+
+Minicomputadores/Raspberry Pi
+- Computador completo
+- Hardware integrado em uma única placa
+- Roda SO Linus ou Windows
+- Uso doméstico e comercial
+
+* Protocolo MQTT - Message Queuing Telemetry Transport
+- Responsável pela comunicação entre os dispositivos e a nuvem.
+- Baseado na pilha do TCP/IP
+- Protocolo de mensagem assíncrona (M2M)
+* comunicação direto de máquina para maquina
+- Criada pela IBM para conectar sensores de pipelines de petróleo a satélites
+- Padrão OASIS suportados pelas linguagens de programação mais populares
+
+** Modelos de arquitetura de serviços
+
+* Modelo Cliente/Servidor (usado por nós no PC)
+- Client -> request.http -> Servidor
+- Servidor -> response.http -> Client
+- Sincrono (toda vez que o client faz uma request, ele aguarda uma resposta para ver o que vai fazer)
+- Acoplado
+
+* Modelo Publish/Subscribe
+- Modelo MQTT
+- Separa quem é o fornecedor da msg de quem é o fornecedor da msg.
+- Um gps, por exemplo.
+- Grande escalabilidade
+- Desacoplado
+- Assíncrono
+
+* MQTT Broker -> Um roteador de msg
+- métodos como HTTP
+- Usa o método 'Publish' ao invés de 'Post'
+- Usa o método 'Subscribe' ao invés de 'Response'
+- Tb usa 'tags' como '+' ou '#' para compor a msg
+
+* Flexibilidade dos tópicos
+- Protocolo -> Broker -> User Identifier -> Sensor -> Position
+mqtt://broker.io/a6g319/gps/position
+protocolo://broker/user/sensor/position
+
+exemplos:
+mqtt://broker/user/accelerometer
+mqtt://broket/user/gps/velocity
+mqtt://broker/user/gps/position
+
+exemplos com tags:
+mqtt://broker/+/gps/position
+mqtt://broker/+/#
+protocolo/broker/todos_usuários/todos_sensores
+
+* Níveis de garantia
+- Qos 0
+Nível mínimo de menor esforço
+Sem garantia de entrega
+Mensagem não é retransmitida
+Nível mais barato
+
+- QoS 1
+Garante que a mensagem foi entregue no mínimo uma vez ao recebedor
+Mensagem por ser retransmitida se não houver confirmação de entrega
+Modelo padrão, mais utilizado hoje em dia
+Nível médio
+
+- QoS 2
+
+Garante que a mensagem foi entergue no mínimo uma vez ao recebedor
+
+Mensagem pode ser retransmitida se não houver confirmação de entrega
+Nível mais caro, com mais segurança
+
+* Cloud
+Cada vez maior número de devices conectados
+TBs(terabytes) ou PBs(pentabytes) de informações
+Potencial de escala global
+
+Modelos:
+Data store -> worker -> broker
+Data analisys -> cache -> worker -> broker
+
+Arquitetura é uma questão de escolha.
+Deve entender o problema e procurar a melhor solução existente até o momento e melhorar a partir daí.
+
+Exemplos:
+* Básico; mais simples; caseira/ Prova de conceito
+Client - App Android
+Broker - Eclipse Mosquito
+Worker - Node.js
+BancoD - MySQL
+
+* Aplicação real; mais robusta; nivel empresarial/ Mínimo Produto Viável
+Client - GPS Embarcado
+Broker - HiveMQ
+Worker - Akka/Scala/JVM
+BancoD - noSQL
+
+* Aplicação moderna / Grandes empresas
+Client - GPS Embarcado
+Broker - AWS IoT Core
+Worker - AWS Kinesis Firehose
+BancoD - AWS S3
+
+IoT na prática
+GPS Embarcado -> AWS IoT Core -> AWS Data Stream -> AWS Lambda -> AWS Elastic Cache -> AWS EC2 -> FeathersJS Backend -> Dashboard
+
