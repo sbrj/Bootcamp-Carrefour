@@ -1,0 +1,85 @@
+Tipos de arquitetura
+
+* Monolito
+Banco de dados -> API1/API2/API3 -> Proxy HTTP -> Web API/Mobile APP
+- um serviço, várias aplicações e operações
+(cada serviço pode ser composto por tecnologias distintas e complementares)
+
+= Pros
+- Baixa complexidade
+- Monitoramento simplificado
+
+= Contras
+- Stack única (uma única linguagem)
+- Compartilhamento de recursos
+- Acoplamento
+- Mais complexo a escalabilidade
+
+* Microserviços #1
+Bancos -> Cluster -> Web API/Mobile Api
+(bancos = Serviço externo1/Banco1/Banco2)
+(cluster = Nodulo1/Nodulo2/Nodulo3 + Proxy HTTP)
+nodulo1 = servico1; nodulo2 = servico2...
+ - um serviço para cada operação
+ - cada serviço é um monolito
+
+= Pros
+- Stack dinâmica (várias linguagens)
+- Simples escalabilidade
+
+= Contras
+- Acoplamento
+- Monitoramento mais complexo
+- Provisionamento mais complexo
+
+***Geralmente é utilizado cubernets para cada instancia em docker
+
+* Microserviços #2
+Serviço Externo -> Nodulo1 -> Message Broker -> Nodulo2 -> Message Broker -> Serviço3 -> Banco Dados
+- Cada serviço chama uma interface(message broker)
+
+= Pros
+- Stack dinâmica
+- Simples escalabilidade
+- Desacoplamento
+
+= Contras
+- Monitoramento mais complexo
+- Provisionamento mais complexo
+
+* Microserviços #3 - Modelo Pipeline
+Cluster -> Gerenciador de Pipeline
+Gerenciador pipeline -> Nodo1/Nodo2/Nodo3
+Nodo1 -> Banco de dados 1
+Nodo2 -> Servico externo(Ex: meio pagamento)
+Nodo3 -> Banco de dados 3
+Proxy HTTP -> Gerenciador de pipeline
+Web API/Mobile APP -> Proxy HTTP
+
+= Pros
+- Stack dinâmica
+- Simples escalabilidade
+- Desacoplamento
+- Menor complexidade
+
+= Contras
+- Provisionamento mais complexo
+- Plataforma inteira depende do gerenciador de pipeline
+
+Coparativo entre os tipos de arquitetura
+
+Gerenciamento de erros e volume de acesso
+
+* Onde é mais complexo:
+- Processos assíncronos(microserviços #2)
+- Pipeline(microserviços #3)
+
+* Solução:
+- Dead letter queue
+- Filas de re-tentativas
+
+**** Requisitos Básicos para arquitetura de software:
+- Conhecimento básico sobre protocolo HTTP e proxy
+- Entendimento sobre RestAPI
+- Conhecimento sobre Docker
+- Saber programar

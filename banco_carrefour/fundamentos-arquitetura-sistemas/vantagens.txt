@@ -24,7 +24,7 @@ Tecnologias mais utilizadas
 
 O que é SOAP?
 * Simple Object Access Protocol
-- Protocolo baseado em XML para acessar Web Services principalmente por HTTP
+- Protocolo baseado em XML para acessar Web Services principalmente por HTTP - Sempre vai usar XML
 
 Quais as vantagens de utilizar o SOAP
 * Permite integração entre aplicações, independente da linguagem, pois usa o XML como linguagem de marcação comum
@@ -47,5 +47,57 @@ Entender a estrutura de uma msg SOAP
 		- SOAP Body
 		* É o elemento que contem os detalhes da mensagem
 
+WSDL - Web Services Description Language
+* Usado para descrever Web Services, funciona como um contrato do serviço.
+- A descrição é feita em um documento XML, onde é descrito o serviço,
+especificações de acesso, operações e métodos.
 
+XSD - XML Schema Definition
+* É um schema no formato XML usado para definir a estrutura de dados que será validada no XML
+- O XSD funciona como uma documentação de como deve ser montado o SOAP Message(XML) que será enviado através de Web Services.
+
+O que é REST - Representational State Transfer
+* É um estilo de arquitetura de software que define a implementaçãoo de serviços WEB
+
+Vantagens em se utilizar REST
+* Permite integrações entre aplicações e também entre cliente e servidor em páginas web e aplicações.
+- Utiliza dos métodos HTTP para definir a operação que está sendo efetuada.
+- Arquitetura de fácil comreensão
+
+O que é API - Application Programming Interface.
+* São conjuntos de rotinas documentados e disponibilizados por uma aplicação para que outras aplicações possam consumir suas funcionalidades.
+
+Métodos:
+- Get - solicita a representação de um recurso.
+- Post - solicita a criação de um recurso.
+- Delete - solicita a exclusão de um recurso.
+- PUT - solicita a atualização de um recurso.
+
+Entendendo os métodos utilizados pelo REST
+
+Estrutura de um REST
+* Cliente / Servidor
+* Cliente faz uma requisição HTTP (get/post/put/delet)
+* Retorna um código de operação
+* Retorna mensagem (texto, JSON, XML)
+
+-- Quanto uma aplicação WEB disponibiliza um conjunto de rotinas e padrões, podemos chamar esses conjuntos de API's
+
+Estrutura de um JSON - JavaScript Object Notation
+* Composta por dicionários e listas
+
+Integração com serviços REST
+
+
+Métodos HTTP na prática
+
+Código de estado HTTP
+ - Status Code
+ * Usado pelo servidor para avisar o cliente sobre o estado da opecação solicitada
+ range (1-100, 101-200, 201-300...)
+ 1xx - informativo
+ 2xx - sucesso
+ 3xx - redirecionamento
+ 4xx - erro do cliente
+ 5xx - erro do servidor
 
