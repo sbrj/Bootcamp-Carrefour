@@ -1,0 +1,101 @@
+Conceito de dados:
+
+Dados de uma maneira geral é um conjunto de valores que descrevem uma instancia
+
+Dados -> Informação -> Conhecimento
+
+Modelo Sustentável:
+- Estuturação
+- Durabilidade
+- Velocidade
+- Controle de Acesso
+
+O que é um banco de dados?
+Sistemas que gerenciam os dados
+
+SGDBs - Sistemas Gerenciadores de Banco de Dados
+
+- Linguagem de definição
+- Linguagem de Manipulação
+- Dicionário de dados
+
+Modelos de Bancos:
+
+* Flat
+- Nada mais é que uma tabela como no excel.
+
+* Hierárquico
+- Muita repetição - resolvida com relacional
+
+* Relacional
+- Utiliza-se de id's para referenciar a hierarquia
+
+* Redes/Grapho
+
+* Orientado a Objetos
+
+* Objeto-Relacional
+
+* Big Data
+
+Banco de Dados Relacionais - RDBMS
+- modelo de banco mais utilizados
+
+Modelagem MER
+Modelo de Entidade(tabelas) e Relacionamento
+
+Um MER pode ser representado por um DER
+DER - Diagrama de Entidade e Relacionamento
+Esse diagrama facilita a compreensão de como o modelo deve se comportar e conceitos como o de normalização.
+
+Entidade forte - tabelas que existem independentemente (produtos, clientes)
+Entidades fracas - tabelas dependentes (vendas)
+Entidade associativa - tabela interface 
+
+-- SGDBR - Sistema Gerenciador de Bando de Dados Relacionais
+- DDL -> Data Definition Language
+* CREATE
+- DML -> Data Manipulation Language
+* INSERT, DELETE, UPDATE
+- DQL -> Data Query Language
+* SELECT
+
+QUERY'S
+- Utiliza o código 'Union', 'JOIN'
+- 'União', 'Intersecção' ou 'Subtração'
+
+= Funções de conjunto
+SELECT Sum(ven.Quantidade) as QTotal, 
+Sum(ven.Valor) as VTotal 
+FROM Item_venda ven 
+JOIN Produto pro
+On pro.Codigo = ven.Cod_Produto
+WHERE ven.Valor > 5
+GROUPBY pro.Descricao
+HAVING SUM(ven.Valor) >= 10
+
+* Nesse caso, 'ven' é um apontador para o banco 'Item_venda'
+* 'pro' é um apontador para 'Produto'
+
+-- Transactions
+O banco deve permitir que muitos usuários acessem a informação ao mesmo tempo. 
+Funciona como um sistema GIT
+Início -> Resolução -> Fim
+Insert/Update/Delete -> Commit/Rollback -> Novos dados ou Dados atualizados
+
+Modelos:
+** ACID
+
+Atomicidade
+- todas operações executadas com sucesso. Commit ou Rollback
+
+Consistência
+- Um sistema precisa, na sua transação, garantir a unicidade das chaves, restrições lógicas e demais caracteristicas que controlam o modelo
+
+Isolamento
+- As várias transações podem acontecer simultaneamente o mesmo registro (ou parte dele)
+
+Durabilidade
+- Depois do commit, mesmo com erros, queda de energia, etc. As alterações devem ser aplicadas.
+
+
