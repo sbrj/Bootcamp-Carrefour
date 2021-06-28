@@ -1,0 +1,34 @@
+** O que é arquitetura em mensageria?
+
+Pros
+- Desacoplamento
+Cada serviço funciona independentemente dos demais e recebe um sinal do 'message broker'
+- Fácil plug & play
+- Comunicação assíncrona
+- Simples escalabilidade
+- Broadcasting
+- Permite Event Source
+
+Contras
+- Single point of failure
+Tudo depende do message brokker. Se ele falhar, tudo falha
+- Difícil monitoramento
+
+** Comunicação assíncrona entre serviços
+
+- A idéia é que os serviços não se comuniquem diretamente.
+
+Modelo básico de comunicação.
+WebApp -> Proxy HTTP -> Serviço1 -> Message Broker
+Message Broker -> Serviço2 -> Message Broker
+Message Broker -> Serviço3
+
+Gerenciamento de erros
+- Dead letter queue (filas de re-tentativas)
+- Monitoramento entre serviços
+Cada passo resulta em uma msg entregue ao broker
+- Rastreamento de fluxo
+Usa logs para rastrear o fluxo
+Leva junto o trackID
+
+
