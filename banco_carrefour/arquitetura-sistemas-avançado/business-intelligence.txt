@@ -1,0 +1,86 @@
+** Business Intelligence em modelos de dados
+Composição:
+- Ferramentas;
+- Infraestrutura
+- Profissionais(corpo tecnico)
+- Dados
+
+** Data WareHouse
+- Estilo de modelagem de dados para que sejam satisfatórios ao BI
+
+OLTP x OLAP
+
+----- OLTP - On-Line Transaction Processing
+- Vendas;
+- Atualização preço produto;
+- Baseado nas transações
+- Muitos usuários utilizando ao mesmo tempo (cliente, vendedor)
+
+* Foco
+- Foco no nível operacional da organização. Visa a execução operacional do negócio.
+
+* Performance
+- Alta velocidade na manipulação de dados operacionais, porem ineficiente para geração de análises gerenciais.
+
+* Estrutura dos dados
+- Os dados são normalmente estruturados em um modelo relacional normalizado, otimizado para a utilização transacional. os dados possuem alto nível de detalhes.
+
+* Armazenamento
+- O armazenamento é feito em sistemas convencionais de banco de dados através dos sistemas de informações da organização.
+
+* Abrangência
+- É utilizado por técnicos e analistas e engloba vários usuários da organização.
+
+* Frequência de utilização
+- A atualização dos dados é feita no momento da transação. Frequência muito alta de atualizações.
+
+* Volatilidade
+- Dados volateis, passíveis de modificação e exclusão.
+
+* Tipos de permissões nos dados
+- Podem ser feita a leitura, inserção, modificação e exclusão dos dados. 
+
+----- OLAP - On-Line Analytical Processing
+- Para geração de relatórios
+- Poucos usuários (gerentes, diretores)
+
+* Foco
+- Foco no nível estratégico da organização. Visa a análise empresarial e tomada de decisão.
+
+* Performance
+- Otimização para a leitura e geração de análises e relatórios gerenciais.
+
+* Estrutura dos dados
+- Os dados estão estruturados na modelagem dimensional. Os dados normalmente possuem alto nível de sumarização.
+
+* Armazenamento
+- O armazenamento é feito em estruturas de Data Warehouse com otimização no desempenho em grandes volumes de dados.
+
+* Abrangência
+- É utilizado pelos gestores e analistas para a tomada de decisão
+
+* Frequência de utilização
+- A atualização das informações é feita no processo de carga dos dados. Frequência baixa, podendo ser diária, semanal, mensal ou anual (ou critério específico)
+
+* Volatilidade
+- Dados históricos e não voláteis. Os dados não sofrem alterações, salvo necessidades específicas (tratamento dos dados, por motivos de erros ou inconsistências de informações) 
+
+** Big Data
+- É um termo que descreve o grande volume de dados, tanto estruturados quanto não estruturados.
+
+* Dados estruturados - Uma tabela, por exemplo
+
+* Dados semi-estruturados - XML; JSON; RDF, OWL -> NoSQL
+NoSQL = Not Only SQL
+- Ferramentas:
+NoSQL DB's -> Apache HBASE; Riak; Cassandra; MongoDB; Redis
+
+* Dados Não estruturados - Redes sociais; sites;
+- Ferramentas:
+DB's -> Hadoop; Apache Spark; Presto; HDFS; Ceph; DataTorrent; Google BigQuery
+
+** Data Lake
+É também um Big Data, um conjunto bruto de dados, porém mais tratado
+Entradas: Dados estruturados; Semi-estruturados;
+Toda informação é armazenada em repositórios de um data lake
+
