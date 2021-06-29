@@ -1,0 +1,29 @@
+Fundamento de arquitetura de aplicações em nuvem
+
+** Cloud Computing
+- Gerenciamento de hardware/software
+- Provedores de servidor e armazenamento
+- Pague o que consumir
+- Iaas / Paas / Baas
+
+* Iaas -> Ifrastructure as a service
+=> Google Cloud; Amazon WebServices; Microsoft Azure
+
+* Paas -> Plataform as a service
+Evolução dos Iaas. Agora tem mais que apenas a infra, tem  escalabilidade, uma plataforma completa para automatização dos processos.
+=> Amazon CloudFormation; Terraform
+
+* Baas -> Backend as a service
+Muito comum para desenvolvimento mobile
+=> Firebase
+
+** Disponibilidade
+- Kubernets (K8S) = Orquestrador de containers(dockers)
+- Multiplos nodos
+- Load balancer = Gerenciador de entrada
+
+** Serverless
+- Sem servidor
+- Sem serviço 'rodando'
+- Sem down time
+=> API Gateway; Amazon Kinesis; AWS Lambda; Amazon S3
