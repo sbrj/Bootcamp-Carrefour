@@ -1,0 +1,139 @@
+Desenvolvimento e operação de software integrado
+
+** DevOps
+
++ Como era antes:
+
+* Develepment
+* Quality Assurance
+* IT Operations
+
+Antigamente era tudo separado. As áreas eram isoladas e tinham metas independentes.
+
++ Como é hoje:
+
+DevOps veio para integrar essas 3 coisas e ter entrega mais rápida de valor para o cliente
+
+DevOps é um termo criado para definir o conjunto de práticas que integram e automatizam os procesos entre as equipes de desenvolvimento, operaçẽs e de apoio (como QA) para a produção rápida e confiável de software
+
+- Conceito
+
+Baseia-se em criar uma cultura de colaboração entre as equipes, que sempre trabalham separadas;
+É uma mudança de mentalidade, uma cultura, um movimento, uma filosofia.
+
+* Difinido em 5 pilares => CALMS:
+CALMS -> Culture, Automation, Lean, Measurement, Sharing
+
+=> Culture - todas as ferrmentas de automação são inúteis se não forem acompanhadas pela verdadeira disposição da área de desenvolvimento e operações em trabalhar juntos.
+DevOps não resolve problemas de ferramentas, resolve problemas humanos.
+
+=> Automation - Elimina o trabalho manual, repetitivo, produz processos repetíveis e cria sistemas confiáveis.
+Automatizar gera velocidade na entrega e tornam os envolvidos mais produtivos.
+Compilação, teste, implementação e provisionamento automatizados são o ponto de partida típico para equipes que ainda não tem isso implementado
+
+=> Lean - Foca nas entregas de valor ao cliente. Modelo de metodologia ágil.
+Precisamos ser objetivos e enxutos. Precisamos conhecer as nossas limitações e os gargalos do processo. Precisamos ser Lean.
+A mentalidade do DevOps vê oportunidades de melhoria contínua em tudo. Identificando as limitações, podemos otimizar o fluxo, entregando maior velocidade e maior eficiência.
+
+=> Measurement - DevOps é cíclico e infinito. Mensurar e obter métricas é o ponto de partida para novas melhorias, seja para o processo de desenvolvimento, o software produzido ou as regras do negócio.
+Além de gerar conhecimento, criam previsibilidade sobre possíveis incidentes que possam vir a surgir.
+Assim, temos insumos suficientes para analisar falhar e gerar melhorias constantemente.
+
+=> Sharing - O compartilhamento de informações, além de ser saudável, auxilia na descentralização de conhecimento em pessoas do times, evitando que os processos se tornem dependentes.
+Compartilhar conhecimento ajuda na criação de times genéricos, com conhecimentos básicos em diversos assuntos do negócio e tecnologias.
+Assim, o time se torna autosustentável.
+
+* Os três caminhos:
+
+= Flow/Fluxo -> Visa eliminar desperdícios, gargalos no processo, transferência de responsabilidades e tempos de espera. Esse caminho é trilhado entre a demanda e a entrega em produção. 
+A chave para este caminho é a aplicação de metodologias ágeis e a automatização dos processos do desenvolvimento à release, como a integração contínua e/ou entrega contínua.
+
+= Feedback -> Ciclos rápidos de feedbacks visam resolver problemas o quanto antes, testando tudo, alertando em qualquer falha, considerando todas as métricas coletadas no ambiente produtivo sobre o valor entregado.
+Neste caso, a chave é o monitoramento, ajudando a gerar informações relevantes constantemente. Com feedbacks rápidos, o negócio consegue falhar rápido, e logo retomar o rumo, caso necessário.
+
+= Learning - O aprendizado contínuo visa gerar conhecimento através da experimementação. Hipóteses são melhores do que uma certeza imediata. Este caminho é fruto do processo científico e produz segurança psicológica. A cultura da culpa não vai existir.Uma pessoa nunca erra sozinha. A culpa não tem que ser julgada e devemos tratar isso como forma de aprendizado.
+
+- Práticas
+
+Planejamento => Codificação => Construção => Test => Release => Deploy => Operation => Monitor
+
+* Planejamento
+
+- Ferramentas => Microsoft Teams; Draw.io; Balsamiq; Roadmunk; Confluence; Jira
+
+* Codificação/Development:
+
+- Ferramentas => Visual Studio; SublimeText; Git;  CMDer; github
+
+* Construção/Build:
+
+- Ferramentas => Container d; Docker; NuGet; NPM; CRI-O; .NET CLI; MS Build
+
+* Test
+
+- Ferramentas => Unit.net; Loader.io; Apache JMeter; Selenium; Postman; Sonarqube; Code climate; Codacy
+
+* Release + * Deploy/Empacotamento
+
+- Ferramentas => Azure Pipelines; Circle CI; AppVeyar; GitLab CI; Travis CI; Jenkins
+
+* Operation
+
+- Ferramentas => Kubernets; Rancher; Azure; Puppet; Terraform; Chef; AWS; OpenShift
+
+* Monitor - Monitoramento - Telemetria
+
+- Ferramentas => DataDog; Prometheus; AppMetrics; RollBar; Zabbix; Pushover; SEQ; Monitis
+
+
+** Continuous Integration
+
+Pode ser composta por um pipeline com várias etapas:
+
+Ferramentas(ver tópico anterior) => Construcao => Tests => Release => Deploy
+
+Tem como limite a geração do artefato. Não faz implantação e produção.
+
+* Continuous Delivery -> Aprove Deploy
+
+Build; Unit Tests
+
+- Entrega contínua - Necessita de um aprovador no meio do caminho
+
+* Continuous Deployment -> Automatic Deploy
+
+- Implantação contínua é feita de maneira automática. Pode configurar o pipeline responsável pela análise e implementação, que chame os testes antes de dar o deploy.
+
+Pipelines:
+
+Commit => Ferramentas => Build => Test => Publish => Deploy => Smoke Test => Rollback
+Publish -> Docker Hub
+Deploy ->SSH-> VM
+Smoke Test ->VERIFY->VM
+
+Configuração parecida, cada qual com sua linguagem de "marcação" - Geralmente trabalham com tags definidas.
+
+Etapas:
+Configuração dos Pipelines(Pode ter mais de um) => Status Bridge
+
+Status Bridge -> CosmosDB PowerShell Module
+* Module Build Status
+
+** Continuous Inspection
+
+* Code Quality Analysis / Continuous Inspection
+
+Ferramentas => Sonarqube; Code Climate; Codacy
+
+Complexidade Ciclomática - Quantos caminhos independentes seu código pode seguir em determinado pedaço da sua aplicação. 
+Quanto mais ramificação tiver, maior a complexidade ciclomática. Ramificações como vértices
+
+As ferramentas ajudas a identificar:
+- Complexidade Cognitiva
+- Código Duplicado
+- Vunlerabilidades / Code Smell
+- Padronização e Estilo
+- Débito Técnico
+- Cobertura de Testes
+- Métricas
+- Validando Pull-Requests / Status Check
