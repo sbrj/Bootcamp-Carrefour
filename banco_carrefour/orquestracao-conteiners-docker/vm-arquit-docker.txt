@@ -1,0 +1,39 @@
+Introdução a orquestração de conteiners com Docker
+
+** Entendendo Maquinas Virtuais (VM) e Contêiners
+
+Maquinas Virtuais
+
+- 0 Possuem escalonamento vertical, ou seja, pode ser aumentados a memória e cpu conforme necessidade.
+- Difícil atualização, podendo ser melhor fazer um 'down time', avisando aos usuários que a aplicação estará fora do ar.
+
+Microserviços/Containers
+
+Container1 - Microserviço1
+Container2 - Microserviço1
+Container3 - Microserviço1
+
+- Escalonamento Horizontal
+- Fácil atualização
+
+Um 'orquestrador' passa a ser responsável por definir qual container vai estar ativo e se uma atualização ocorrer, automatizar o processo de exclusão do container anterior.
+
+Ferramentas => Docker SWARM; Kubernetes
+
+** Arquitetura de um ecossistema com Docker
+
+* Container image - é um pacote que contem todas as dependências da nossa aplicação
+* Dockerfile - é um arquivo de texto com contem todas as instrucoes para fazer o build na nossa imagem
+* Build é a ação que cria a nossa imagem com base no Dockerfile
+* Containers - uma instancia da nossa imagem que representa a execução de uma aplicação/processo/serviço
+* Volume - Espécies de backup/diretórios
+* Tag - Ajuda no versionamento das imagens
+* Mult-stage Build - Podemos usar uma imagem para compilar nosso programa/aplicação
+* Repository - Como uma pasta com as imagens
+* Registry - Serviço que prove acesso do docker ao repositório
+* Docker Hub - Repositório público
+* Compose - Ferramenta que utiliza meta data para criar containers
+
+** Criando nosso primeiro contêiner
+
+- Utilizado o site do docker e utilizado o docker-play
