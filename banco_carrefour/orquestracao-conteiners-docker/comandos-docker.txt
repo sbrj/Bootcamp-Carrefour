@@ -1,0 +1,88 @@
+Principais comando para orquestração de containers
+
+* Run - Criar o container
+* PS - Listar containers
+* Info - Vai trazer as informaçãoes do docker
+* Images - Imagens utilizadas para criar nossos containers
+* Exec - Executar outro binário no nosso container
+* Stop, start - Para/Inicia o container
+* Logs - Lista os outputs do container
+* Inspect - Listar as configurações do container
+* Pull - Baixar as imagens de um repositório publico
+* Commit - Para comitar modificações
+* Tag - Para melhorar o versionamentos
+* Login, logout - Para logar no repositório
+* Push - Para armazenar no nosso repositório
+* Search - Para procurar uma imagem
+* RM - Remover container
+* RI - Remover imagem
+* Export, import - Exportar/Importar container
+* Save, load - Salva como arquivo de texto
+
+Comandos na prática:
+
+docker run --name newcontainer hello world
+
+docker run --name hello -d busybox sleep 3600
+
+docker ps
+
+docker run --name site -d -p 80:80 nginx
+
+docker ps
+
+curl localhost
+
+netstat -nltp
+
+docker info
+
+docker exec hello mkdir teste # criar um diretório no meu container
+docker exec --help # quais argumentos passar
+
+docker exec -it hello sh # para acessar o container em modo interativo
+ls # para ver as pastas
+docker ps
+docker stop site # para o nginx
+curl localhost # para conferir se o container site foi fechado
+docker start site
+curl localhost # para conferir se o site voltou para o ar
+
+docker logs site
+
+docker images
+
+docker pull # baixa uma imagem para o repositório
+
+docker rmi -f hello-world # apaga a imagem hello-world
+docker pull hello-wold # retorna a imagem apagada
+
+docker exec hello ls # acessar as pastas do container 'hello'
+
+docker rm -f hello
+
+docker run --name hello -d busybox mkdir teste # cria um container hello, cria a pasta teste e encessa o container.
+
+docker commit --author="Mauricio Martino" --message="Imagem com commit" hello hello
+
+docker images
+
+dive hello
+
+dive busybox
+
+container <-- busybox = hello --> hello
+
+docker images # observar o estado do container antes de criar a tag
+
+docker tag hello mmartino/hello:1.0
+
+docker images # para conferir se a tag foi criada
+
+docker login
+
+cat /root/.docker/config.json
+
+docker push mmartino/hello:1.0
+
+docker search hello
